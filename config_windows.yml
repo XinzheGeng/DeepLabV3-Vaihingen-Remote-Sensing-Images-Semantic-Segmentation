@@ -1,0 +1,18 @@
+# config_windows.yml
+authorName: SCOTT
+experimentName: RSsegmentation_pytorch
+trialConcurrency: 1
+trainingServicePlatform: local
+searchSpacePath: search_space.json
+useAnnotation: false
+maxExecDuration: 1h
+maxTrialNum: 10
+tuner:
+  builtinTunerName: TPE
+  classArgs:
+    #choice: maximize, minimize
+    optimize_mode: maximize
+trial:
+  command: python train.py
+  codeDir: .
+  gpuNum: 1
